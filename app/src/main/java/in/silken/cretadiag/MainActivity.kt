@@ -1,4 +1,4 @@
-package in.silken.cretadiag
+package com.silken.cretadiag
 
 import android.Manifest
 import android.app.Activity
