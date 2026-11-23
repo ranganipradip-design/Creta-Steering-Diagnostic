@@ -199,8 +199,15 @@ jobs:
         with:
           gradle-version: '8.9'
 
+      
+      - name: Fix Kotlin ScrollView Error
+        shell: bash
+        run: |
+          sed -i 's/fillViewport/isFillViewport/g' app/src/main/java/in/silken/cretadiag/MainActivity.kt
+
       - name: Build Debug APK
         run: gradle --no-daemon :app:assembleDebug
+
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
